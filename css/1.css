@@ -1,0 +1,105 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar {
+    background: #6aafe6;
+    width: 210px;
+    height: 100vh;
+    position: fixed;
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    transition: all .5s;
+    left: -210px;
+    /* opacity: .7; */
+}
+
+.sidebar-active {
+    left: 0;
+}
+
+.sidebar>.show-sidebar {
+    border: none;
+    /* outline: none; */
+    background: transparent;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+}
+
+.sidebar>.show-sidebar svg {
+    /* 电脑下隐藏菜单键 */
+    display: none;
+}
+
+.sidebar>.show-sidebar svg path {
+    transition: all .3s;
+}
+
+.sidebar>.active svg path {
+    fill: white;
+}
+
+.sidebar>.menu {
+    /* 黑点消失 */
+    list-style: none;
+}
+
+.sidebar>.menu li {
+    width: 150px;
+    height: 45px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: all .3s;
+}
+
+.sidebar>.menu>.pitch-on,
+.sidebar>.menu>li:hover {
+    color: cornflowerblue;
+    background-color: white;
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main>div {
+    display: none;
+}
+
+main>.pitch-on {
+    display: unset;
+}
+
+
+
+
+/* 开始响应式 */
+@media(max-width:980px) {
+
+    .sidebar {
+        width: 100vw;
+        left: 100vw;
+        /* opacity: .7; */
+    }
+
+    .sidebar>.show-sidebar svg {
+        display: unset;
+    }
+
+    .sidebar-active {
+        left: 0;
+    }
+
+
+}
